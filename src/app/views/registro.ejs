@@ -1,0 +1,85 @@
+<%- include('../includes/head.ejs') %> 
+<%- include('../includes/headers.ejs') %> 
+
+<!-- ##### Breadcumb Area Start ##### -->
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(src/utils/img/fondos/bg_01.jpg);">
+    <div class="bradcumbContent">
+        <!-- <p>See what’s new</p> -->
+        <h2>Registro</h2>
+    </div>
+</section>
+<!-- ##### Breadcumb Area End ##### -->
+
+
+<!-- ##### Login Area Start ##### -->
+<section class="login-area section-padding-100" id="registro">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="login-content">
+                    <h3>Usuario</h3>
+                    <!-- Login Form -->
+                    <div class="login-form">
+                        <form action="registro" method="POST">
+                            <div class="form-group">
+                                <div class="d-flex flex-column align-items-center text-center p-5 py-5"><img
+                                    class="rounded-circle mt-5" name="foto_perfil" src="https://i.imgur.com/0eg0aG0.jpg" width="150">
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="userRegistro" id="userRegistro">Nombre</label>
+                                <input type="text" class="form-control" name="user" id="userRegistro" aria-describedby="emailHelp" placeholder="Ingresar Nombre" autofocus required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userRegistro" id="lastNameRegistro">Apellido</label>
+                                <input type="text" class="form-control" name="lastname" id="lastNameRegistro" aria-describedby="emailHelp" placeholder="Ingresar Apellido" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="addressRegistro" id="directionRegistro">Direción</label>
+                                <input type="text" class="form-control" name="addre" id="addressRegistro" aria-describedby="emailHelp" placeholder="Ingresar Direción" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneRegistro" id="telephoneRegistro">Teléfono</label>
+                                <input type="number" class="form-control" name="telefono" id="phoneRegistro" aria-describedby="emailHelp" placeholder="Ingresar Teléfono" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailRegistro" id="emailRegistro">Correo Electrónico</label>
+                                <input type="email" class="form-control" name="email" id="emailRegistro" aria-describedby="emailHelp" placeholder="Ingresar Correo Electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passRegistro" id="passRegistro">Contraseña</label>
+                                <input type="password" class="form-control" name="passw" id="passRegistro" placeholder="Contraseña" required>
+                            </div>
+                            <button type="submit" class="btn oneMusic-btn mt-30" id="buttonRegistro" onclick="registro()">Registrar</button>
+                        </form>
+                        <br>
+                        <p>¿Ya tienes una cuenta? <a href="index.html">Inicia sesión.</a></p>
+                        <p>Al registrarse acepto los <a href="terminos_condiciones">términos y condiciones de uso.</a></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Login Area End ##### -->
+
+<%- include('../includes/footer.ejs') %> 
+
+<!-- Iniciar alerta -->
+
+<% if(typeof alert !="undefined") { %>
+    <script>
+        Swal.fire({
+            title: '<%= alertTitle  %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton:'<%= showConfirmButton %>',
+            timer:  2500
+        }).then(()=>{
+            window.location= '/<%= ruta %>'
+        })
+    </script>
+<% } %>
+    
+<!-- Fin alerta -->

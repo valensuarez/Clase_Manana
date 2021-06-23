@@ -1,0 +1,23 @@
+
+                        <!-- 1 -->
+                        <div class="columna columna-33 columna-mobile-100">
+                            <div class="bloque-servicio">
+                                <div class="bloque-img-servicio cuadrado-perfecto">
+                                    <img src="src/utils/img/sorteos/sorteo_01.jpg">
+                                </div>
+                                <div class="bloque-contenido-servicio">
+                                    <% results.foreach((db_sorteos)=> { %>
+                                        <h3><%= db_sorteos.titulo %></h3>
+                                        <ul>
+                                            <li>Código:<%= db_sorteos.codigo %></li>
+                                            <li>Nombre:<%= db_sorteos.nombre_producto %></li>
+                                            <li>Lugar:<%= db_sorteos.lugar %></li>
+                                            <li>Fecha:<%= db_sorteos.fecha %></li>
+                                            <li>Hora:<%= db_sorteos.hora %></li>
+                                            <li>Contacto:<%= db_sorteos.telefono %></li>
+                                        </ul>
+                                        <% }) %>
+                                        <a href="/" class="boton boton-blanco"><span>Click Aqui para participar</span></a>
+                                </div>
+                            </div>
+                        </div>
